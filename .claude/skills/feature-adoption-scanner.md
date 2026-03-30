@@ -142,42 +142,53 @@ Compose the final output in this structure:
 ```
 # Feature Adoption Opportunity Scan — {DATE}
 
-## Summary
-- Accounts scanned: [N]
-- Qualifying accounts (≥$50K or cards): [N]
-- Passed to enrichment: [N]
-- High-confidence opportunities: [N]
+Accounts scanned: [N] | Qualifying: [N] | High opportunity: [N] | Medium: [N] | Anomalies: [N]
 
 ---
 
-## 🔴 High Opportunity Accounts ({N})
+## 🔴 High Opportunity ({N} accounts)
 
-### [Account Name] — Score: [X]
-**Balance:** $X | **Card Spend:** $X/mo
-**Active Products:** [list]
-**Missing:** [list, in priority order]
-**Why it matters:** [1-2 sentences on GP impact of the gap]
-**Signals found:** [what Gmail/Slack/Granola/SF activities surfaced]
-**Last contact:** [date + channel]
-**Conversation hook:** [specific angle — what to open with, what to reference, what to ask]
+[ACCOUNT NAME] — [one-line description: industry, stage, funding type]
 
-[repeat for each account]
-
----
-
-## 🟡 Medium Opportunity Accounts ({N})
-[Account Name] | Missing: [products] | Balance: $X | Last contact: [date] | Signal: [one line]
-[table format, no deep narrative]
+💰 Checking: $X | Treasury: $X | Savings: $X | GP MTD: $X | Card Spend LM: $X
+🚫 Missing: [missing products in priority order]
+👤 Primary: [name] ([email])
+📞 Last touch: [date] — [channel], [one sentence on what was discussed or context]
+🔍 Signal: [what enrichment found — e.g. "Ramp mentioned in Feb email", "no card signal anywhere", "asked about AP in Jan Granola notes"]
+📅 Upcoming: [next scheduled meeting, or "None scheduled"]
+💡 Lead with: [specific conversation hook based on the signal — what to open with and what to ask]
 
 ---
 
-## ⚠️ Anomalies ({N})
-[Account Name] | Has Treasury, no Checking | Balance: $X | Flag for manual review
+[repeat for each high opportunity account]
 
 ---
 
-## Accounts Excluded (below threshold)
-Total excluded: [N] — balance <$50K and no card spend
+## 🟡 Medium Opportunity ({N} accounts)
+
+[ACCOUNT NAME] — [one-line description]
+
+💰 Checking: $X | Treasury: $X | GP MTD: $X | Card Spend LM: $X
+🚫 Missing: [missing products]
+👤 Primary: [name] ([email])
+📞 Last touch: [date] — [channel]
+🔍 Signal: [one line]
+💡 Lead with: [specific hook]
+
+---
+
+[repeat for each medium opportunity account]
+
+---
+
+## ⚠️ Anomalies ({N} accounts)
+
+[ACCOUNT NAME] — has Treasury, no Checking | Balance: $X | [primary contact if known] | Flag for manual review
+
+---
+
+## Excluded
+[N] accounts below threshold (balance <$50K, no card spend)
 ```
 
 ---
