@@ -29,7 +29,15 @@ Customers are mostly VC-backed startups, with some CPG companies and SMBs. Accou
 
 - **Size:** ~400–450 accounts
 - **Primary contacts:** typically the founder, CFO, controller, outsourced accounting team, or an ops/finance hire
-- **Segmentation:** Based on GP/deposit size + hard-coded logic for YC-backed and top VC-backed companies. Segmentation is being revised — updated logic will be reflected in Salesforce soon. Do not rely on current Salesforce segmentation tiers as final.
+- **Segmentation:** Five tiers based on deposit size, card spend, funding, and logo flags. Logic below. Being updated in Salesforce soon — use this as the source of truth until confirmed live.
+
+| Tier | Criteria |
+|---|---|
+| **Premium** | $5M+ in total deposits OR ($250K+ forecasted card spend OR $5M+ forecasted total deposits) |
+| **Premium Growth** | $5M+ in total Harmonic funding OR Y Combinator = TRUE |
+| **Tier 1** | Large Logo = TRUE AND (total deposits ≥$100K OR total spend $50K–$249K) |
+| **Tier 2** | Large Logo = FALSE AND (total balances $10K–$99K OR total spend $10K–$50K) |
+| **Tier 3** | Everything else |
 - **Growth AE assignment:** Each account is assigned either Brendan Feehan or Abigail Geyser. Assignment lives in Salesforce.
 
 ---
@@ -125,5 +133,5 @@ Total = (50% × Retention%) + (25% × Upsell Attainment%) + (25% × Feature Atta
 ## Open Items (update as resolved)
 
 - [ ] Confirm Salesforce field name for "money elsewhere" / external deposits
-- [ ] Receive updated account segmentation logic when Salesforce is cleaned up
+- [ ] Confirm segmentation logic is live in Salesforce (logic added to CLAUDE.md, pending SF update)
 - [ ] Confirm which accounts are assigned to Brendan vs. Abigail in Salesforce
