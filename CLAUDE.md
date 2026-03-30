@@ -94,6 +94,31 @@ Total = (50% × Retention%) + (25% × Upsell Attainment%) + (25% × Feature Atta
 
 ---
 
+## Salesforce Product Adoption Fields
+
+These are the Salesforce checkbox fields used to determine which products an account has active:
+
+| Field | Notes |
+|---|---|
+| **Active Checking** | Reliable |
+| **Active Savings** | Cross-check with savings balance — checkbox can be stale |
+| **Active Treasury** | Cross-check with treasury balance — checkbox can be stale |
+| **Active Cards** | Reliable; cross-check with card spend if needed |
+| **Active AP Bills** | Reliable |
+| **Active Expense Management** | Reliable |
+| **Active Operating Account** | Indicates payroll processing — requires transaction history to verify; do not rely on checkbox alone |
+| **Active Acct Integration (Direct)** | Accounting integration — excluded from quota tracking |
+| **Large Logo** | Boolean — used in tier logic |
+| **Overall Logo Status** | e.g. "Sustained Active" |
+| **Initial Large Logo Date** | Date account was flagged as large logo |
+| **Initial Financially Active Date** | Date account first became financially active |
+
+**Back-testing rule:** For Checking, Savings, Treasury, and Cards — if a balance or spend amount exists in Salesforce/Hex, treat the product as active regardless of whether the checkbox is checked. The checkbox can be out of sync; real balances and spend are the source of truth.
+
+**Operating Account exception:** Verifying payroll requires a deep Hex transaction pull. Do not attempt to verify this field programmatically in skills — flag for manual review if needed.
+
+---
+
 ## Data Sources & Where Things Live
 
 | Source | What's There |
